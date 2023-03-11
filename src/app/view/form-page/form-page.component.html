@@ -1,0 +1,25 @@
+<!--Form Page-->
+
+<!--form work as add and edit data-->
+
+<form #addEditForm="ngForm" (ngSubmit)="addEditProduct(addEditForm.value)">
+
+    <label>title</label>
+    <input type="text" name="title" value="bb"  ngModel [(ngModel)]="title" required >
+
+    <label>description</label>
+    <input type="text" name="description" ngModel [(ngModel)]="description">
+
+    <label>price</label>
+    <input type="number" name="price" ngModel [(ngModel)]="price" >
+
+    <label>discountPercentage</label>
+    <input type="number" name="discountPercentage" ngModel [(ngModel)]="discountPercentage">
+
+    <label>rating</label>
+    <input type="number" name="rating" ngModel [(ngModel)]="rating">
+
+    <button type="submit" *ngIf="!switchForms" >Add</button>
+   <button type="submit" *ngIf="switchForms">Edit</button>
+    
+</form>

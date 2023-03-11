@@ -1,0 +1,18 @@
+<!--Product Page-->
+<!--Parent-->
+<!--loop on array of all products with pagenation-->
+<div *ngFor="let product of products">
+    <!--Child-->
+    <app-card-view [sendproduct]="product" ></app-card-view>
+
+</div>
+
+<!--to make pagenation-->
+<mat-paginator [length]="this.allProduct.length"
+               [pageSize]="3" 
+                [pageSizeOptions]="[3, 10, 20]"
+                (page)="OnPageChange($event)">
+</mat-paginator>
+
+
+
